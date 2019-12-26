@@ -1,3 +1,3 @@
-export default function myFirstFunc () {
-  return 'hello rollup'
+export default function myFirstFunc (str: string) {
+  return `hello ${str}`
 }
