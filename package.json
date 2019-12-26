@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "工具库",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simonwong/fly-helper.git"
@@ -16,7 +13,14 @@
     "url": "https://github.com/simonwong/fly-helper/issues"
   },
   "homepage": "https://github.com/simonwong/fly-helper#readme",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts ./src"
+  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "eslint": "^6.8.0",
     "typescript": "^3.7.4"
   }
 }
