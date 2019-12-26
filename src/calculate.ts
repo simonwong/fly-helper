@@ -1,5 +1,5 @@
 /**
- * 1 + 1
+ * 计算 1 + 1
  * @returns 2
  * @example
  * ```ts
@@ -8,4 +8,4 @@
  *
  * @beta
  */
-export const add = () => 1 + 1
+export const calculateOneAddOne = () => 1 + 1
