@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "mainEntryPointFilePath": "./lib/index.d.ts",
+  "bundledPackages": [ ],
+  // 生成 api 报告，生成的还没 .d.ts 看的舒服，关了
+  "apiReport": {
+    "enabled": false,
+    "reportFolder": "./lib/"
+  },
+  "docModel": {
+    "enabled": true
+  },
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "./lib/index.d.ts"
+  }
+}
