@@ -1,6 +1,6 @@
 {
   "name": "fly-helper",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "description": "工具库",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
