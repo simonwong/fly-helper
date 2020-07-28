@@ -33,7 +33,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.7.7",
     "@microsoft/api-extractor": "^7.7.0",
-    "@types/fs-extra": "^8.0.1",
+    "@types/fs-extra": "^9.0.1",
     "@types/gulp": "^4.0.6",
     "@types/jest": "^24.0.24",
     "@types/node": "^13.1.0",
