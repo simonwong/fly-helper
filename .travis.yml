@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - "10"
+
+install:
+  - yarn --frozen-lockfile
+script:
+  - yarn test
+catche: yarn
+
+after_script:
+  - bash <(curl -s https://codecov.io/bash)
+
+branchs:
+  only:
+    master

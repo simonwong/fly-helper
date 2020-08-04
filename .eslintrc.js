@@ -37,6 +37,7 @@ const eslintrc = {
     '@typescript-eslint/no-use-before-define': 0,
     '@typescript-eslint/prefer-for-of': 1,
     '@typescript-eslint/prefer-interface': 0,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/interface-name-prefix': [0, {
       prefixWithI: 'always'
     }], // 接口名称首字母 I

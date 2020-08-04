@@ -6,7 +6,6 @@ const { toString } = Object.prototype
  * @returns [object Xxxx]
  *
  * @public
- * @author Simon
  */
 export function getTag (value: any): string {
   if (value == null) {
@@ -25,7 +24,6 @@ export function getTag (value: any): string {
  * ```
  *
  * @public
- * @author Simon
  */
 export function isNumber (value: any): boolean {
   return getTag(value) === '[object Number]'
@@ -41,7 +39,6 @@ export function isNumber (value: any): boolean {
  * ```
  *
  * @public
- * @author Simon
  */
 export function isString (value: any): boolean {
   return getTag(value) === '[object String]'
