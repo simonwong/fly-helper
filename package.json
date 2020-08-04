@@ -25,6 +25,7 @@
   "scripts": {
     "build": "gulp build",
     "api": "api-extractor run",
+    "test": "jest --coverage --verbose -u",
     "lint": "eslint --ext .js,.ts ./src",
     "lint:fix": "eslint --fix --ext .js,.ts ./src",
     "changelog": "gulp changelog",
