@@ -50,7 +50,6 @@ describe('type:', () => {
     test(" '2' => false ", () => {
       assert.strictEqual(isNumber('2'), false)
     })
-
   })
 
   /**
