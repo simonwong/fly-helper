@@ -7,7 +7,7 @@ const { toString } = Object.prototype
  *
  * @public
  */
-export function getTag (value: any): string {
+export function getTag(value: any): string {
   if (value == null) {
     return value === undefined ? '[object Undefined]' : '[object Null]'
   }
@@ -25,7 +25,7 @@ export function getTag (value: any): string {
  *
  * @public
  */
-export function isNumber (value: any): boolean {
+export function isNumber(value: any): boolean {
   return getTag(value) === '[object Number]'
 }
 
@@ -40,6 +40,6 @@ export function isNumber (value: any): boolean {
  *
  * @public
  */
-export function isString (value: any): boolean {
+export function isString(value: any): boolean {
   return getTag(value) === '[object String]'
 }
