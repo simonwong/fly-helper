@@ -21,6 +21,10 @@
   "bugs": {
     "url": "https://github.com/simonwong/fly-helper/issues"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "homepage": "https://github.com/simonwong/fly-helper#readme",
   "scripts": {
     "build": "gulp build",
