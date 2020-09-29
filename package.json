@@ -1,6 +1,6 @@
 {
   "name": "fly-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "工具库",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -20,6 +20,10 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/simonwong/fly-helper/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "homepage": "https://github.com/simonwong/fly-helper#readme",
   "scripts": {
