@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import path from 'path'
 import { RollupOptions } from 'rollup'
 import rollupTypescript from 'rollup-plugin-typescript2'
@@ -58,10 +59,7 @@ const rollupConfig: RollupOptions = {
       // 只转换源代码，不运行外部依赖
       exclude: 'node_modules/**',
       // babel 默认不支持 ts 需要手动添加
-      extensions: [
-        ...DEFAULT_EXTENSIONS,
-        '.ts',
-      ],
+      extensions: [...DEFAULT_EXTENSIONS, '.ts'],
     }),
   ],
 }
