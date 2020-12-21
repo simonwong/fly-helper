@@ -1,5 +1,19 @@
 # 工具库更新日志
 
+## [1.0.3](https://github.com/simonwong/fly-helper/compare/v1.0.2...v1.0.3) (2020-12-21)
+
+
+### Bug Fixes
+
+* **workflows.test:** remove workflows test hit ([90eabfd](https://github.com/simonwong/fly-helper/commit/90eabfd0b49a0340cd0ef76a9e3bd05cd9cd65a0))
+
+
+### Features
+
+* upgrade packages, remove lodash in dependencies ([8c59fd9](https://github.com/simonwong/fly-helper/commit/8c59fd9febde20ec0de3af142ef1550b95b8c1da))
+
+
+
 ## [1.0.2](https://github.com/simonwong/fly-helper/compare/v1.0.1...v1.0.2) (2020-09-29)
 
 
