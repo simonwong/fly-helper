@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     /* 基础配置 */
-    "target": "esnext",
+    "target": "ES5",
     "lib": [
-      "dom",
-      "esnext"
+      "DOM",
+      "ESNext"
     ],
     "removeComments": false,
     "declaration": true,
