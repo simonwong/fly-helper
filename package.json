@@ -43,7 +43,7 @@
     "@types/fs-extra": "^9.0.11",
     "@types/gulp": "^4.0.8",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.0.1",
+    "@types/node": "^16.4.5",
     "@yueqing/lint": "^1.3.1",
     "chalk": "^4.1.1",
     "conventional-changelog-cli": "^2.1.1",
