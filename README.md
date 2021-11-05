@@ -2,6 +2,7 @@
 
 It's a Tool library, method collection.
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/simonwong/fly-helper)
 ![test](https://github.com/simonwong/fly-helper/workflows/test/badge.svg)
 [![codecov](https://codecov.io/gh/simonwong/fly-helper/branch/master/graph/badge.svg)](https://codecov.io/gh/simonwong/fly-helper)
 [![Build Status](https://travis-ci.com/simonwong/fly-helper.svg?branch=master)](https://travis-ci.com/simonwong/fly-helper)

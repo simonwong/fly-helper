@@ -4,11 +4,12 @@
     "target": "ES5",
     "lib": [
       "DOM",
+      "DOM.Iterable",
       "ESNext"
     ],
     "removeComments": false,
     "declaration": true,
-    "sourceMap": true,
+    "sourceMap": false,
 
     /* 强类型检查配置 */
     "strict": true,
@@ -16,12 +17,12 @@
 
     /* 模块分析配置 */
     "baseUrl": ".",
-    "outDir": "./lib",
+    "outDir": "dist",
+    "declarationDir": ".",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["dist"]
 }
