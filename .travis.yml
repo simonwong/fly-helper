@@ -1,12 +1,21 @@
 language: node_js
 node_js:
-  - "10"
+  - "14"
+
+cache:
+  npm: false
+  directories:
+    - "~/.pnpm-store"
+
+before_install:
+  - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@6
+  - pnpm config set store-dir ~/.pnpm-store
 
 install:
-  - yarn --frozen-lockfile
+  - pnpm install
+
 script:
-  - yarn test
-catche: yarn
+  - pnpm test
 
 after_script:
   - bash <(curl -s https://codecov.io/bash)
