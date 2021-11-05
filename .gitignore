@@ -102,3 +102,4 @@ dist
 
 lib
 temp
+*.bak
