@@ -4,7 +4,7 @@ type EnumDataRecord = Record<PropertyKey, any>
 
 type TransformArrayToObject<
   Tuple extends EnumDataList,
-  Result extends EnumDataRecord = {}
+  Result extends EnumDataRecord = {},
 > = Tuple extends []
   ? Result // last call
   : Tuple extends readonly [infer Head, ...infer Tail]
@@ -87,10 +87,8 @@ export function EnumData<T extends EnumDataList>(data: T) {
       return undefined
     },
     set() {
-      // eslint-disable-next-line no-console
-      console.warn('Don’t allow assignment to constant variable')
-      return false
+      throw TypeError('Don’t allow assignment to constant variable')
     },
   })
-  return (ans as unknown) as EnumDataResult<T>
+  return ans as unknown as EnumDataResult<T>
 }
