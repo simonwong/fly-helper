@@ -70,7 +70,7 @@
     "@babel/runtime": "^7.16.0"
   },
   "lint-staged": {
-    "*.{.ts,.js}": [
+    "*.{ts,js}": [
       "eslint --fix --format=pretty"
     ]
   }

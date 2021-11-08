@@ -3,9 +3,9 @@ import { EnumData } from '../src'
 
 describe('EnumData:', () => {
   /**
-   * EnumData bace function
+   * EnumData base function
    */
-  describe('EnumData bace function', () => {
+  describe('EnumData base function', () => {
     const COLOR_DATA = EnumData([
       ['RED', 1, '红色'],
       ['BLUE', 2, '蓝色'],
@@ -60,6 +60,17 @@ describe('EnumData:', () => {
         STATUS_MAP.map.constructor,
         Array.prototype.map.constructor,
       )
+
+      assert.strictEqual(STATUS_MAP.length, 3)
+
+      assert.strictEqual(
+        STATUS_MAP.map(([, , text]) => text).join(','),
+        '待支付,待回款,待审核',
+      )
+      assert.strictEqual(
+        STATUS_MAP.reduce((prevText, [key]) => `${prevText}${key},`, ''),
+        'PAY,BALANCE,REVIEW,',
+      )
     })
 
     test(' match in EnumData', () => {
@@ -113,6 +124,25 @@ describe('EnumData:', () => {
       assert.strictEqual(STATUS_MAP.forEach === 30, true)
       assert.strictEqual(STATUS_MAP.PAY === '已支付', false)
       assert.strictEqual(STATUS_MAP.PAY === 10, true)
+    })
+  })
+
+  /**
+   * EnumData Set
+   */
+  describe('EnumData Set', () => {
+    // 字段冲突、方法名冲突
+    const STATUS_MAP = EnumData([
+      ['YES', 1, '是'],
+      ['NO', 0, '否'],
+    ])
+
+    test(' cannot set value ', () => {
+      assert.strictEqual(STATUS_MAP.YES === 1, true)
+      expect(() => {
+        STATUS_MAP.YES = '2'
+      }).toThrowError('Don’t allow assignment to constant variable')
+      assert.strictEqual(STATUS_MAP.YES === 1, true)
     })
   })
 })
