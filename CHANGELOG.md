@@ -1,5 +1,15 @@
 # 工具库更新日志
 
+# [1.2.0](https://github.com/simonwong/fly-helper/compare/v1.1.0...v1.2.0) (2022-02-14)
+
+
+### Features
+
+* **EnumData:** 新增 EnumData 方法，来处理枚举数据 ([8eb3c77](https://github.com/simonwong/fly-helper/commit/8eb3c77b0b5f6d3699c79815d58cff0b53142f0d))
+* **toUnicode:** add toUnicode methods ([e198e4e](https://github.com/simonwong/fly-helper/commit/e198e4ea746c82fcada7faa31ab8ec9428f04a5e))
+
+
+
 # [1.1.0](https://github.com/simonwong/fly-helper/compare/v1.0.3...v1.1.0) (2021-01-18)
 
 
