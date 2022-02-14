@@ -3,8 +3,7 @@
   "mainEntryPointFilePath": "./lib/index.d.ts",
   "bundledPackages": [ ],
   "apiReport": {
-    "enabled": false,
-    "reportFolder": "./lib/"
+    "enabled": false
   },
   "docModel": {
     "enabled": true
