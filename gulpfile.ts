@@ -44,13 +44,26 @@ const buildByRollup: TaskFunc = async cb => {
     plugins: rollupConfig.plugins,
   }
   const outOptions = rollupConfig.output
-  const bundle = await rollup(inputOptions)
+  let bundle
 
-  // 写入需要遍历输出配置
-  if (Array.isArray(outOptions)) {
-    outOptions.forEach(async outOption => {
-      await bundle.write(outOption)
-    })
+  try {
+    bundle = await rollup(inputOptions)
+
+    // 写入需要遍历输出配置
+    if (Array.isArray(outOptions)) {
+      outOptions.forEach(async outOption => {
+        await bundle.write(outOption)
+      })
+    }
+  } catch (e) {
+    if (e instanceof Error) {
+      log.error(e.message)
+    }
+  }
+
+  if (bundle !== null) {
+    // closes the bundle
+    await bundle.close()
     cb()
     log.progress('Rollup built successfully')
   }
@@ -62,29 +75,35 @@ const apiExtractorGenerate: TaskFunc = async cb => {
     __dirname,
     './api-extractor.json',
   )
-  // 加载并解析 api-extractor.json 文件
-  const extractorConfig: ExtractorConfig = await ExtractorConfig.loadFileAndPrepare(
-    apiExtractorJsonPath,
-  )
-  // 判断是否存在 index.d.ts 文件，这里必须异步先访问一边，不然后面找不到会报错
-  const isExist: boolean = await fse.pathExists(
-    extractorConfig.mainEntryPointFilePath,
-  )
+  // 判断是否存在 index.d.ts 文件，这里必须先等会儿，rollup 的 bundle write 是结束了，
+  // 但是 ts 的 typings 编译还没结束
+  const isExist = await new Promise(resolve => {
+    let intervalTimes = 5
+    let exitFlag = false
+    const timer = setInterval(async () => {
+      exitFlag = await fse.pathExists('./lib/index.d.ts')
+      intervalTimes--
+      if (exitFlag || intervalTimes === 0) {
+        clearInterval(timer)
+        resolve(exitFlag)
+      }
+    }, 100)
+  })
 
   if (!isExist) {
     log.error('API Extractor not find index.d.ts')
     return
   }
+  // 加载并解析 api-extractor.json 文件
+  const extractorConfig: ExtractorConfig =
+    ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath)
 
   // 调用 API
-  const extractorResult: ExtractorResult = await Extractor.invoke(
-    extractorConfig,
-    {
-      localBuild: true,
-      // 在输出中显示信息
-      showVerboseMessages: true,
-    },
-  )
+  const extractorResult: ExtractorResult = Extractor.invoke(extractorConfig, {
+    localBuild: true,
+    // 在输出中显示信息
+    showVerboseMessages: true,
+  })
 
   if (extractorResult.succeeded) {
     // 删除多余的 .d.ts 文件
