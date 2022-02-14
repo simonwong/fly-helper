@@ -35,3 +35,12 @@ jobs:
 
       - name: Run Test
         run: pnpm test
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          files: coverage/coverage-final.json
+          flags: unittests,${{ matrix.os }}
+          name: fly-helper
+          fail_ci_if_error: true
+          verbose: true
