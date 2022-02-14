@@ -141,7 +141,7 @@ describe('EnumData:', () => {
       assert.strictEqual(STATUS_MAP.YES === 1, true)
       expect(() => {
         STATUS_MAP.YES = '2'
-      }).toThrowError('Don’t allow assignment to constant variable')
+      }).toThrowError(`Don't allow assignment to constant variable`)
       assert.strictEqual(STATUS_MAP.YES === 1, true)
     })
   })

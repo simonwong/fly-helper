@@ -1,4 +1,5 @@
 type EnumDataItem = readonly [string, number | string, string]
+/** @beta */
 export type EnumDataList = readonly EnumDataItem[]
 type EnumDataRecord = Record<PropertyKey, any>
 
@@ -28,6 +29,7 @@ type ReadonlyMergedRecord<T> = T extends EnumDataRecord
     }
   : never
 
+/** @beta */
 export type EnumDataResult<TD extends EnumDataList> = ReadonlyMergedRecord<
   TransformArrayToObject<TD>
 > &
@@ -87,7 +89,7 @@ export function EnumData<T extends EnumDataList>(data: T) {
       return undefined
     },
     set() {
-      throw TypeError('Don’t allow assignment to constant variable')
+      throw TypeError(`Don't allow assignment to constant variable`)
     },
   })
   return ans as unknown as EnumDataResult<T>
