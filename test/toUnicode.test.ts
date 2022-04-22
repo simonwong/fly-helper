@@ -21,5 +21,9 @@ describe('type:', () => {
     test(' "ABC" => \\u0041\\u0042\\u0043 ', () => {
       assert.strictEqual(toUnicode('ABC'), '\\u0041\\u0042\\u0043')
     })
+
+    test(' "" => "" ', () => {
+      assert.strictEqual(toUnicode(''), '')
+    })
   })
 })
