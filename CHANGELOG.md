@@ -1,5 +1,9 @@
 # 工具库更新日志
 
+## [1.2.1](https://github.com/simonwong/fly-helper/compare/v1.2.0...v1.2.1) (2022-04-24)
+
+
+
 # [1.2.0](https://github.com/simonwong/fly-helper/compare/v1.1.0...v1.2.0) (2022-02-14)
 
 
