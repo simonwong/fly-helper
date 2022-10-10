@@ -53,7 +53,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.25",
     "@yueqing/lint": "^2.2.0",
-    "chalk": "^4.1.2",
+    "chalk": "^5.1.0",
     "conventional-changelog": "^3.1.25",
     "fs-extra": "^10.1.0",
     "gulp": "^4.0.2",
