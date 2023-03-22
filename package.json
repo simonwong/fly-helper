@@ -30,6 +30,7 @@
     "build": "gulp build",
     "api": "api-extractor run",
     "test": "jest --coverage --verbose -u",
+    "test:watch": "jest --coverage --verbose --watch",
     "lint": "eslint --ext .js,.ts --format=pretty ./src",
     "lint:fix": "eslint --fix --ext .js,.ts --format=pretty ./src",
     "changelog": "gulp changelog",
